@@ -1,13 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import { Provider } from 'react-redux' // State management
+import { BrowserRouter } from 'react-router-dom' // Routing
+import 'bootstrap/dist/css/bootstrap.min.css' // Styles
+
+import App from './components/App'
+import reportWebVitals from './reportWebVitals'
+
+import { makeStore } from './redux/store'
+
+// Mock api backend
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line global-require
+  const { worker } = require('./redux/mocks/browser')
+  worker.start()
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // eslint-disable-next-line react/jsx-filename-extension
+  <Provider store={makeStore()}>
+    <BrowserRouter>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 
