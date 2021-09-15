@@ -1,13 +1,13 @@
-import emptySplitApi from "..";
+import emptySplitApi from '..'
 
 export const coreApi = emptySplitApi.injectEndpoints({
   endpoints: (build) => ({
     login: build.mutation({
       query: (creds) => ({
-          url: '/core/login/',
-          method: 'POST',
-          body: creds
-        }),
+        url: '/core/login/',
+        method: 'POST',
+        body: creds
+      }),
       invalidatesTags: ['User']
     }),
     user: build.query({

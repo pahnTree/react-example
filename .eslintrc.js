@@ -3,24 +3,24 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
-    jest: true,
+    jest: true
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'airbnb', 'airbnb/hooks', 'prettier'],
+  extends: ['plugin:react/recommended', 'standard'],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: 12,
-    sourceType: 'module',
+    sourceType: 'module'
   },
-  plugins: ['react', 'prettier'],
+  plugins: ['react'],
   settings: {
     react: {
-      version: 'detect',
-    },
+      version: 'detect'
+    }
   },
   ignorePatterns: ['**/mocks/*.js'],
   rules: {
     'react/jsx-no-bind': 0
   }
-};
+}

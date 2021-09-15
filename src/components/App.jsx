@@ -16,6 +16,6 @@ const App = () => (
         <Route path='/logout'><Logout/></Route>
       </Switch>
     </div>
-  )
+)
 
 export default App

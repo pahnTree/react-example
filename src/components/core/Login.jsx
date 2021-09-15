@@ -39,8 +39,8 @@ const Login = () => {
   return (
     <Container>
       {!loggedIn && user?.isAuthenticated
-      ? <div>Already logged in</div>
-      : <>
+        ? <div>Already logged in</div>
+        : <>
       {loggingIn && <div>Logging in</div>}
       {errorLogin && <div>Error logging in </div>}
       {loggedIn && data?.message === 'success' && <div>Logged in</div>}

@@ -1,7 +1,7 @@
-import React from "react"
-import { render, screen, fireEvent, server, extraHandlers } from "../../redux/test-utils"
+import React from 'react'
+import { render, screen, fireEvent, server, extraHandlers } from '../../redux/test-utils'
 
-import Login from "./Login"
+import Login from './Login'
 
 test('Login function works, and shows error if down', async () => {
   render(<Login/>)

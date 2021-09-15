@@ -27,19 +27,13 @@ const AuthLinks = ({ user }) => {
 }
 AuthLinks.propTypes = {
   user: PropTypes.shape({
-    username: PropTypes.string,
-    first_name: PropTypes.string,
-    last_name: PropTypes.string,
-    email: PropTypes.string,
-    roles: PropTypes.arrayOf(PropTypes.string),
     isAuthenticated: PropTypes.bool
   }).isRequired
 }
 
 const Header = () => {
   const {
-    data: user,
-    isSuccess
+    data: user
   } = useUserQuery()
 
   return (
@@ -49,7 +43,7 @@ const Header = () => {
         <Navbar.Toggle aria-controls='midpoint-navbar-nav'/>
         <Navbar.Collapse id='midpoint-navbar-nav' className='justify-content-end'>
           <MainLinks/>
-          {isSuccess && <AuthLinks user={user}/>}
+          <AuthLinks user={user}/>
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 
-import { useLogoutMutation } from "../../redux/api/core/user"
+import { useLogoutMutation } from '../../redux/api/core/user'
 
 const Logout = () => {
   const [
