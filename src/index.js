@@ -12,13 +12,11 @@ import { makeStore } from './redux/store'
 
 // Mock api backend
 if (process.env.NODE_ENV === 'development') {
-  // eslint-disable-next-line global-require
   const { worker } = require('./redux/mocks/browser')
   worker.start()
 }
 
 ReactDOM.render(
-  // eslint-disable-next-line react/jsx-filename-extension
   <Provider store={makeStore()}>
     <BrowserRouter>
       <React.StrictMode>

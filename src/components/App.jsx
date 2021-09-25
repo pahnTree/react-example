@@ -3,9 +3,9 @@ import { Switch, Route } from 'react-router'
 
 import Header from './Header'
 
-import Home from './core/Home'
-import Login from './core/Login'
-import Logout from './core/Logout'
+import Home from '../pages/Home'
+import Login from '../pages/Login'
+import Logout from '../pages/Logout'
 
 const App = () => (
     <div>

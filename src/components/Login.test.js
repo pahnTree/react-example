@@ -1,10 +1,10 @@
 import React from 'react'
-import { render, screen, fireEvent, server, extraHandlers } from '../../redux/test-utils'
+import { render, screen, fireEvent, server, extraHandlers } from '../redux/test-utils'
 
-import Login from './Login'
+import LoginCard from './Login'
 
 test('Login function works, and shows error if down', async () => {
-  render(<Login/>)
+  render(<LoginCard/>)
   const inputUsername = screen.getByLabelText('Username')
   const inputPassword = screen.getByLabelText('Password')
   const buttonSubmit = screen.getByText('Submit')
@@ -36,7 +36,7 @@ test('Login fails gracefully when API is down', async () => {
     extraHandlers.networkError.get('/api/core/user/'),
     extraHandlers.networkError.post('/api/core/login/')
   )
-  render(<Login/>)
+  render(<LoginCard/>)
   fireEvent.click(screen.getByText('Submit'))
 
   await screen.findByText('Error logging in')

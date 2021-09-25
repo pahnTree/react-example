@@ -1,4 +1,4 @@
-Example project to show how to use different technologies together.
+Example project to show how to use different technologies together, and playground to experiment with designs.
 
 Main frameworks
 - React

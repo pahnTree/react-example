@@ -17,11 +17,11 @@ const MainLinks = () => (
 const AuthLinks = ({ user }) => {
   const { isAuthenticated } = user
   return (
-   <Nav className='ml-auto'>
-    {isAuthenticated
-      ? <Nav.Link as={Link} to='/logout'>Logout</Nav.Link>
-      : <Nav.Link as={Link} to='/login'>Login</Nav.Link>
-    }
+    <Nav className='ml-auto'>
+      {isAuthenticated
+        ? <Nav.Link as={Link} to='/logout'>Logout</Nav.Link>
+        : <Nav.Link as={Link} to='/login'>Login</Nav.Link>
+      }
     </Nav>
   )
 }
@@ -30,6 +30,11 @@ AuthLinks.propTypes = {
     isAuthenticated: PropTypes.bool
   }).isRequired
 }
+AuthLinks.defaultProps = {
+  user: {
+    isAuthenticated: false
+  }
+}
 
 const Header = () => {
   const {
@@ -37,16 +42,18 @@ const Header = () => {
   } = useUserQuery()
 
   return (
-    <Navbar bg='light' expand='lg'>
-      <Container>
-        <Navbar.Brand href='/'>Midpoint</Navbar.Brand>
-        <Navbar.Toggle aria-controls='midpoint-navbar-nav'/>
-        <Navbar.Collapse id='midpoint-navbar-nav' className='justify-content-end'>
-          <MainLinks/>
-          <AuthLinks user={user}/>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <Container>
+      <Navbar className='mb-3'>
+        <Navbar.Brand as={Link} to='/'>Midpoint</Navbar.Brand>
+      </Navbar>
+      <Navbar bg='light' expand='lg' className='mb-3'>
+        <Navbar.Toggle aria-controls='midpoint-navbar-nav' />
+          <Navbar.Collapse id='midpoint-navbar-nav' className='justify-content-end'>
+            <MainLinks />
+            <AuthLinks user={user} />
+          </Navbar.Collapse>
+      </Navbar>
+    </Container>
   )
 }
 
