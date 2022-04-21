@@ -5,6 +5,8 @@ import { Provider } from 'react-redux' // State management
 import { BrowserRouter } from 'react-router-dom' // Routing
 import 'bootstrap/dist/css/bootstrap.min.css' // Styles
 
+import { IntlProvider } from 'react-intl'
+
 import App from './components/App'
 import reportWebVitals from './reportWebVitals'
 
@@ -20,7 +22,9 @@ ReactDOM.render(
   <Provider store={makeStore()}>
     <BrowserRouter>
       <React.StrictMode>
-        <App />
+        <IntlProvider messages={{}} locale="en" defaultLocale='en'>
+          <App />
+        </IntlProvider>
       </React.StrictMode>
     </BrowserRouter>
   </Provider>,

@@ -10,11 +10,13 @@ import Logout from '../pages/Logout'
 const App = () => (
     <div>
       <Header/>
-      <Switch>
-        <Route exact path='/'><Home/></Route>
-        <Route path='/login'><Login/></Route>
-        <Route path='/logout'><Logout/></Route>
-      </Switch>
+      <main>
+        <Switch>
+          <Route exact path='/'><Home/></Route>
+          <Route path='/login'><Login/></Route>
+          <Route path='/logout'><Logout/></Route>
+        </Switch>
+      </main>
     </div>
 )
 
