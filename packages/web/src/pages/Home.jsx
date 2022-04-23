@@ -23,6 +23,11 @@ const INFO_CARDS = [
 const Home = () => (
   <Container>
     <Row>
+      <Col>
+        <h1>Homepage</h1>
+      </Col>
+    </Row>
+    <Row>
       {INFO_CARDS.map(info =>
         <Col key={info.key} sm={12} md={6} lg={4}>
           <Card>

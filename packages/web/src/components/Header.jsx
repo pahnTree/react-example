@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
@@ -42,18 +41,18 @@ const Header = () => {
   } = useUserQuery()
 
   return (
-    <Container>
-      <Navbar className='mb-3'>
+    <header>
+      <Navbar className='mb-3' aria-label='brand'>
         <Navbar.Brand as={Link} to='/'>Midpoint</Navbar.Brand>
       </Navbar>
-      <Navbar bg='light' expand='lg' className='mb-3'>
+      <Navbar bg='light' expand='lg' className='mb-3' aria-label='navigation'>
         <Navbar.Toggle aria-controls='midpoint-navbar-nav' />
           <Navbar.Collapse id='midpoint-navbar-nav' className='justify-content-end'>
             <MainLinks />
             <AuthLinks user={user} />
           </Navbar.Collapse>
       </Navbar>
-    </Container>
+    </header>
   )
 }
 
