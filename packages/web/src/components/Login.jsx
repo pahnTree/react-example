@@ -41,7 +41,7 @@ const Login = () => {
   return (
     <Card>
       <Card.Body>
-        <Card.Title>Login</Card.Title>
+        <Card.Title><h1>Login</h1></Card.Title>
         {loggingIn && <div>Logging in</div>}
         {errorLogin && <div>Error logging in </div>}
         {loggedIn && data?.message === 'success' && <div>Logged in</div>}

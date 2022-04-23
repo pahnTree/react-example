@@ -20,6 +20,7 @@ const Logout = () => {
     <Container>
       <Row>
         <Col>
+          <h1>Logout</h1>
           {isLoading && <div>Logging out</div>}
           {isSuccess && <div>Logged out</div>}
           {isError && <div>Error logging out</div>}
